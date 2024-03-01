@@ -225,8 +225,8 @@ void driveMotor() {
   error_L = pulse_per_loop_L - speed_L;
   sum_L += error_L;
 
-  rwheel_mgs.data = speed_R;
-  lwheel_mgs.data = speed_L;
+  rwheel_mgs.data = timer3->getCount();;
+  lwheel_mgs.data = timer4->getCount();
   lwheel_pub.publish(&lwheel_mgs);
   rwheel_pub.publish(&rwheel_mgs);
 
